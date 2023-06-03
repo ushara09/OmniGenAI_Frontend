@@ -1,0 +1,12 @@
+.side-box {
+    height: 800px;
+    width: 400px;
+    background-color: black;
+}
+
+.main-box {
+    margin-top: -800px;
+    margin-left: 100px;
+    
+}
+
