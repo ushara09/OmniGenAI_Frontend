@@ -1,13 +1,15 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CustomerLoginPage from './Components/CustomerLoginPage/CustomerLoginPage';
-import SuperAdminLogin from './Components/SuperAdminLogin/SuperAdminLogin';
+import CustomerLoginPage from './pages/CustomerLoginPage/CustomerLoginPage';
+import SuperAdminLogin from './pages/SuperAdminLoginPage/SuperAdminLogin';
+import SuperAdminHomePage from './pages/SuperAdminHomePage/SuperAdminHomePage';
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/customer-login' element={<CustomerLoginPage/>} />
         <Route path='/admin-login' element={<SuperAdminLogin/>} />
+        <Route path='/super-admin-home' element={<SuperAdminHomePage/>} />
       </Routes>
     </BrowserRouter>
   );
