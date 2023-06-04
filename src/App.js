@@ -10,6 +10,7 @@ function App() {
         <Route path='/customer-login' element={<CustomerLoginPage/>} />
         <Route path='/admin-login' element={<SuperAdminLogin/>} />
         <Route path='/super-admin-home' element={<SuperAdminHomePage/>} />
+        <Route path='/super-admin-home' element={<SuperAdminHomePage/>} />
       </Routes>
     </BrowserRouter>
   );
