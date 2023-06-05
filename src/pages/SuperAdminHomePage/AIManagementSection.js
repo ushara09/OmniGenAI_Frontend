@@ -12,8 +12,8 @@ function AIManagementSection() {
   ]);
 
   function changeDropDownLable(labelName) {
-    if(labelName === "Common Prompts"){
-        setDropDownSelectedValues([])
+    if (labelName === "Common Prompts") {
+      setDropDownSelectedValues([]);
     }
     setDropDownLabel(labelName);
   }
@@ -26,15 +26,31 @@ function AIManagementSection() {
   return (
     <div>
       <div>AIManagementSection</div>
-      <input
-        style={{ width: "300px" }}
-        type="text"
-        className="form-control search-form rounded"
-        placeholder="Enter Prompt Title"
-      />
+      <div className="mt-3 mb-3 px-3">
+        <input
+          type="text"
+          className="form-control search-form rounded"
+          placeholder="Enter Prompt Title"
+        />
+      </div>
 
-      <div className="row">
-        <div className="col">
+      <div className="row px-3 mb-3">
+      <div className="col-md-5">
+          <Multiselect
+            options={companies}
+            placeholder=" "
+            isObject={false}
+            disable={dropDownLable == "Common Prompts" ? true : false}
+            onSelect={(event) => {
+              selectDropDownValues(event);
+            }}
+            onRemove={(event) => {
+              selectDropDownValues(event);
+            }}
+          />
+        </div>
+        <div className="col-md-7">
+          
           <div className="dropdown show">
             <a
               className="btn btn-secondary dropdown-toggle"
@@ -66,23 +82,10 @@ function AIManagementSection() {
             </div>
           </div>
         </div>
-        <div className="col">
-          <Multiselect
-            options={companies}
-            placeholder=" "
-            isObject={false}
-            disable={dropDownLable == "Common Prompts" ? true : false}
-            onSelect={(event) => {
-              selectDropDownValues(event);
-            }}
-            onRemove={(event) => {
-              selectDropDownValues(event);
-            }}
-          />
-        </div>
+     
       </div>
 
-      <div className="form-group">
+      <div className="form-group px-3 mb-3">
         <textarea
           className="form-control"
           rows="3"
@@ -90,7 +93,7 @@ function AIManagementSection() {
         ></textarea>
       </div>
 
-      <div className="col">
+      <div className="float-end px-3">
         <button type="button" className="btn btn-success">
           <MdOutlineDownloadDone size={20} />
           Save Changes
