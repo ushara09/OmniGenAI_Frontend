@@ -29,12 +29,14 @@ function SuperAdminHomePage() {
         clientId="2000-abc"
         numberOfBots="4"
         activeStatus={false}
+        isAdminHomePage={true}
       />
       <AdminPageCardView
         clientName="christo"
         clientId="1998-abc"
         numberOfBots="1"
         activeStatus={true}
+        isAdminHomePage={true}
       />
     </div>
   );

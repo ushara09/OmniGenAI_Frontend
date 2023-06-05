@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function AdminPageCardView(props) {
-
-// useEffect(()=>{
-//     setClientName = name;
-//     setClientId = id;
-//     setNumberOfBots = numOfBots;
-// },[])
+  const [adminHomePage, setAdminHomePage] = useState(props.isAdminHomePage);
 
   return (
     <div className="container">
       <div className="card">
         <div className="card-body">
-          This is some text within a card body.
           {props.activeStatus ? (
             <div
               className="bg-success rounded-circle"
@@ -26,17 +21,28 @@ export default function AdminPageCardView(props) {
           )}
           <div>{props.clientName}</div>
           <div>
-            <span>Clilent ID - </span>
+            <span>{adminHomePage ? "Client Id -" : "AI Bot Id -"}</span>
             {props.clientId}
           </div>
           <div>
-            <span>Number of AI bots - </span>
-            {props.numberOfBots}
+            {adminHomePage ? (
+              <div>
+                <span>Number of AI bots - </span>
+                {props.numberOfBots}
+              </div>
+            ) : null}
           </div>
           <div>
-            <button type="button" class="btn btn-primary">
+            <Link
+              className="btn btn-primary"
+              to={
+                adminHomePage
+                  ? "/admin/each-client-section"
+                  : "/admin/each-bot-section"
+              }
+            >
               View
-            </button>
+            </Link>
           </div>
         </div>
       </div>
