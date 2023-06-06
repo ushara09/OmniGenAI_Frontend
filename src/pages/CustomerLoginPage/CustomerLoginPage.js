@@ -1,6 +1,6 @@
 import React from "react";
 import "./CustomerLoginPage.css";
-import loginPageLogo from "../../resources/images/login-page-logo.png";
+import loginPageLogo from "../../resources/images/login-page-logo-customer.png";
 
 function CustomerLoginPage() {
   return (

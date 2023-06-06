@@ -5,7 +5,7 @@ import SideNavBar from "../../Components/SideNavBar/SideNavBar";
 
 function AIManagementSection() {
   const [dropDownLable, setDropDownLabel] = useState("Company Prompts");
-  const [dropDownSelectedValues, setDropDownSelectedValues] = useState([]);
+  const [dropDownSelectedValues, setDropDownSelectedValues] = useState(null);
   const [companies, setCompanies] = useState([
     "company one",
     "company two",
@@ -20,16 +20,16 @@ function AIManagementSection() {
   }
 
   function selectDropDownValues(data) {
-    // console.log("Data - ",data);
+     console.log("Data - ",data);
     setDropDownSelectedValues(data);
   }
 
   return (
     <div className="row">
-      <div className="col-md-2">
+      <div className="col-md-3">
         <SideNavBar />
       </div>
-      <div className="col-md-10">
+      <div className="col-md-8">
         <div className="mt-3 mb-3 px-3">
           <input
             type="text"
@@ -42,7 +42,7 @@ function AIManagementSection() {
           <div className="col-md-5">
             <Multiselect
               options={companies}
-              placeholder=" "
+              placeholder={dropDownSelectedValues == null ?"Select Business":""}
               isObject={false}
               disable={dropDownLable == "Common Prompts" ? true : false}
               onSelect={(event) => {
