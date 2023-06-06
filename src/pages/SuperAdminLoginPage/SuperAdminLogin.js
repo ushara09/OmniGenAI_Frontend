@@ -1,16 +1,14 @@
-import React from 'react'
-import "./SuperAdminLogin.css"
-import loginPageLogo from "../../resources/images/login-page-logo.png"
+import React from "react";
+import "./SuperAdminLogin.css";
+
 
 function SuperAdminLogin() {
   return (
-    <div>
-      <div className="side-box">Super Admin Portal</div>
-      <div>
-        <img className="logoStyle" src={loginPageLogo} />
+    <div className="main-box">
+      <div className="navbar-box">
+        {/* <SuperAdminLoginNavBar /> */}
       </div>
-      {/* login box */}
-      <div className="main-box">
+      <div className="login-box">
         <div className="Auth-form-container">
           <form className="Auth-form">
             <div className="Auth-form-content">
@@ -48,6 +46,3 @@ function SuperAdminLogin() {
 }
 
 export default SuperAdminLogin;
-
-
-

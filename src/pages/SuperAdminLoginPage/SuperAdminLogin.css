@@ -1,12 +1,12 @@
-.side-box {
-    height: 500px;
-    width: 500px;
-    background-color: black;
+.main-box{
+    /* display: flex; */
+    /* max-width: 100%; */
 }
 
-.main-box {
-    margin-top: -800px;
-    margin-left: 100px;
-    
+.login-box{
+    /* max-width: 20%; */
 }
 
+.navbar-box{
+    /* max-width: 20%; */
+}
