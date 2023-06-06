@@ -1,6 +1,6 @@
 import React from "react";
 import "./controller-sidebar.css"
-import loginPageLogo from "../../resources/images/logo-new.png"
+import sideNavLogo from "../../resources/images/logo-new.png"
 
 export default function SideNavBar() {
   return (
@@ -8,10 +8,10 @@ export default function SideNavBar() {
       
       <div class="wrapper">
        
-        <nav id="sidebar">
-            <div class="sidebar-header">
+        <nav id="sidebar-nav">
+            <div class="sidebar-nav-header">
                
-                <img id="sidebar-logo" src={loginPageLogo} alt=""/>
+                <img id="sidebar-nav-logo" src={sideNavLogo} alt=""/>
             </div>
 
             <div id="menu">

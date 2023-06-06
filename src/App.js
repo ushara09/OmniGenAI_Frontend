@@ -7,10 +7,12 @@ import EachClientSection from './pages/SuperAdminHomePage/EachClientSection';
 import EachBotSection from './pages/SuperAdminHomePage/EachBotSection';
 import AIManagementSection from './pages/SuperAdminHomePage/AIManagementSection';
 import SideNavBar from './Components/SideNavBar/SideNavBar';
+import LoginSideBar from './Components/LoginSideBar/LoginSideBar';
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* <Route path='/' element={<LoginSideBar/>} /> */}
         <Route path='/' element={<SideNavBar/>} />
         <Route path='/customer-login' element={<CustomerLoginPage/>} />
         <Route path='/admin-login' element={<SuperAdminLogin/>} />

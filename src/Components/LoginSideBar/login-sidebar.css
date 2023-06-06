@@ -20,14 +20,6 @@ p {
     color: #999;
 }
 
-a,
-a:hover,
-a:focus {
-    color: inherit;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
 .navbar {
     padding: 15px 10px;
     background: #fff;
@@ -60,105 +52,43 @@ a:focus {
     align-items: stretch;
 }
 
-#sidebar-nav {
-    min-width: 300px;
-    max-width: 300px;
+#sidebar-login {
+    min-width: 30%;
+    max-width: 30%;
     background: #2B303A;
     color: #fff;
-    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-#sidebar-nav #sidebar-nav-logo {
-    max-width: 100%;
+.sidebar-login-logo {
+    max-width: 80%;
     height: auto;
 }
 
-#sidebar-nav.active {
-    margin-left: -250px;
-}
-
-#sidebar-nav .sidebar-nav-header {
+.sidebar-login-header {
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
     background: #2B303A;
 }
 
-#sidebar-nav ul.components {
+#sidebar-login ul.components {
     padding: 20px 0;
-    /* border-bottom: 1px solid #47748b; */
 }
 
-/* #sidebar ul.components li ul li a {
-    display: block !important; 
-} */
-
-
-#sidebar-nav ul p {
+#sidebar-login ul p {
     color: #fff;
     padding: 10px;
 }
 
-#sidebar-nav ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-    /* display: flex;
-    justify-content: center; */
-}
-
-#sidebar-nav ul li a:hover {
-    color: #0066CC;
-    background: #fff;
-}
-
-#sidebar-nav ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    /* background: #6d7fcc; */
-    background: #0066CC;
-}
-
-.p-left{
-    padding-left: 10px;
-}
-
-
-a[data-toggle="collapse"] {
-    position: relative;
-}
-
-.dropdown-toggle::after {
-    margin-top: 5%;
-    /* margin-right: 5%; */
-}
-
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    /* background: #0066CC; */
-}
-
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    
-}
-
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
-
-a.article,
-a.article:hover {
-    background: #0066CC !important;
-    color: #fff !important;
+.p-center{
+    display: flex;
+    justify-content: center; 
+    font-size: 1.6rem;
+    font-weight: 600;   
 }
 
 /* ---------------------------------------------------
