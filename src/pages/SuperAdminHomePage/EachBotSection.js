@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
+import { useParams } from "react-router-dom";
 
 function EachBotSection() {
   const [companyName, setCompanyName] = useState("Applova");
@@ -7,6 +8,7 @@ function EachBotSection() {
   const [activeStatus, setActiveStatus] = useState(true);
   const [botName, setBotName] = useState("Bot Name");
   const [botId, setBotId] = useState("Bot ID");
+  const { id, name, status } = useParams();
 
   return (
     <div>
@@ -21,7 +23,7 @@ function EachBotSection() {
         <div className="container">
           <div className="card">
             <div className="card-body">
-              {activeStatus ? (
+              {status ? (
                 <div
                   className="bg-success rounded-circle"
                   style={{ width: "30px", height: "30px" }}
@@ -32,14 +34,14 @@ function EachBotSection() {
                   style={{ width: "30px", height: "30px" }}
                 ></div>
               )}
-              <div>{botName}</div>
+              <div>{name}</div>
               <div>
                 <span>AI Bot Id -</span>
-                {botId}
+                {id}
               </div>
               <div>
-                <EachPromt name="AI Personality"/>
-                <EachPromt name="AI Language"/>
+                <EachPromt name="AI Personality" />
+                <EachPromt name="AI Language" />
               </div>
             </div>
           </div>
@@ -51,13 +53,9 @@ function EachBotSection() {
 
 export default EachBotSection;
 
-
-
-
 function EachPromt(props) {
   return (
     <div>
-      
       <div className="container">
         <div className="card">
           <div className="card-body">
@@ -66,7 +64,11 @@ function EachPromt(props) {
                 <span>{props.name}</span>
               </div>
               <div className="col">
-                <AiTwotoneDelete size={30} color="red" onClick={() => console.log("deleted")}/>
+                <AiTwotoneDelete
+                  size={30}
+                  color="red"
+                  onClick={() => console.log("deleted")}
+                />
               </div>
             </div>
           </div>
