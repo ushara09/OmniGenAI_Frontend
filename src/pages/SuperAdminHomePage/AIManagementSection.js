@@ -20,7 +20,7 @@ function AIManagementSection() {
   }
 
   function selectDropDownValues(data) {
-     console.log("Data - ",data);
+    console.log("Data - ", data);
     setDropDownSelectedValues(data);
   }
 
@@ -42,7 +42,9 @@ function AIManagementSection() {
           <div className="col-md-5">
             <Multiselect
               options={companies}
-              placeholder={dropDownSelectedValues == null ?"Select Business":""}
+              placeholder={
+                dropDownSelectedValues == null ? "Select Business" : ""
+              }
               isObject={false}
               disable={dropDownLable == "Common Prompts" ? true : false}
               onSelect={(event) => {
