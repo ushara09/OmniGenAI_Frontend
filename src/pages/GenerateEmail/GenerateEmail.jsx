@@ -67,7 +67,17 @@ const GenerateEmail = (props) => {
 
 					<ul className="navlinks">
 						<li className="active">Generate Email</li>
-						<li>Account Details</li>
+						<li>
+                        <a href="#pageSubmenu2" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle submenu"><span className="p-left" >Account Details</span></a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu2">
+                            <li>
+                                <a href="#">Setting</a>
+                            </li>
+                            <li>
+                                <a href="#">Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
 					</ul>
 				</div>
 
