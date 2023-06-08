@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css"
 
 const GenerateEmail = (props) => {
 	// API URL
-	const API = "https://demo7371228.mockable.io/user/company/2c33e0ba-03a8-11ee-be56-0242ac120004/bot/3fff832d-7e38-48cf-bf30-c04d05775657/chat"
+	const API = "http://172.16.1.158:1997/omnigen-ai/v1/user/generateResponseForZohoTicket"
 	
 	const [ticketNumber, setTicketNumber] = useState("")
 	const [isLoading, setIsLoading] = useState(false)

@@ -49,3 +49,79 @@
   button {
     padding: 5px 10px;
   }
+
+  .btn-primary {
+    background-color: #0066cc;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    transition: background 0.15s cubic-bezier(0.47, 0.54, 0.81, 0.72);
+  }
+  
+  .btn-primary:hover {
+    background-color: hsl(210, 100%, 20%);
+  }
+  
+  .btn-primary:disabled {
+    background-color: gray;
+  }
+
+  .role-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+  }
+  
+  .role-box {
+    width: 100%;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .role {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .buttons button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .buttons button:hover {
+    background-color: #e8e8e8;
+  }
+  
+  .buttons button:first-child {
+    background-color: #c3e6cb;
+  }
+  
+  .buttons button:first-child:hover {
+    background-color: #b1dfbb;
+  }
+  
+  .buttons button:last-child {
+    background-color: #f8d7da;
+  }
+  
+  .buttons button:last-child:hover {
+    background-color: #f3c6cb;
+  }
+  

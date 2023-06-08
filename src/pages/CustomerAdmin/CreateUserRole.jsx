@@ -22,15 +22,31 @@ function App() {
   
     return (
       <div className="container">
-        <div className="input-container">
-          <input
+        <div className="input-container" style={{
+											width: "100%",
+											height: "100%",
+											borderRadius: "10px",
+										}}>
+          <input style={{
+												height: "100%",
+												width: "100%",
+												backgroundColor: "#D9D9D9",
+												padding: "24px",
+												fontWeight: 500,
+												fontSize: "20px",
+												outline: "none",
+												border: "none",
+												borderRadius: "10px",
+												textTransform: "uppercase",
+											}}
             type="text"
             placeholder="Enter a name for the user role"
             value={userRole}
             onChange={handleInputChange}
           />
-          <button onClick={handleCreateRole}>Create Role</button>
+          <div ><button width="100%"  onClick={handleCreateRole} className='btn-primary'>Create Role</button>
         </div>
+          </div>
   
         <div className="user-roles">
           <h3>Available User Roles</h3>

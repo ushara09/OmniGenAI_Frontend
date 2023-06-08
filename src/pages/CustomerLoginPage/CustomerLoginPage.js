@@ -9,7 +9,7 @@ function CustomerLoginPage() {
   const [password, setPassword] = useState("");
 
   function onSubmit() {
-    if (username === "admin" && password == "admin") {
+    if (username === "admin" && password === "admin") {
       notifySuccess();
     } else {
       notifyFail();
@@ -17,7 +17,7 @@ function CustomerLoginPage() {
   }
 
   function notifySuccess() {
-    toast.success("Login Success !", {
+    toast.success("Login Success!", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -30,7 +30,7 @@ function CustomerLoginPage() {
   }
 
   function notifyFail() {
-    toast.error("Login Failed !", {
+    toast.error("Login Failed!", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -43,7 +43,7 @@ function CustomerLoginPage() {
   }
 
   return (
-    <div>
+    <div className="login-page">
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -57,7 +57,7 @@ function CustomerLoginPage() {
         theme="light"
       />
       <div>
-        <img className="logoStyle" src={loginPageLogo} />
+        <img className="logoStyle" src={loginPageLogo} alt="Logo" />
       </div>
       <div className="Auth-form-container">
         <form className="Auth-form">
