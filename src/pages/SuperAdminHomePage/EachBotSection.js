@@ -3,45 +3,56 @@ import { AiTwotoneDelete } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 
 function EachBotSection() {
-  const [companyName, setCompanyName] = useState("Applova");
-  const [companyId, setCompanyId] = useState("AFEA1234");
-  const [activeStatus, setActiveStatus] = useState(true);
-  const [botName, setBotName] = useState("Bot Name");
-  const [botId, setBotId] = useState("Bot ID");
+  const [prompt, setPrompt] = useState([
+    "prompt 1",
+    "prompt 2",
+    "prompt 3",
+    "prompt 4",
+  ]);
   const { id, name, status } = useParams();
 
   return (
     <div>
-      <div>EachBotSection</div>
-      <div>{companyName}</div>
-      <div>
-        <span>Company Id : </span>
-        {companyId}
-      </div>
-
       <div>
         <div className="container">
-          <div className="card">
+          <div className="card mt-4">
             <div className="card-body">
-              {status ? (
-                <div
-                  className="bg-success rounded-circle"
-                  style={{ width: "30px", height: "30px" }}
-                ></div>
-              ) : (
-                <div
-                  className="bg-danger rounded-circle"
-                  style={{ width: "30px", height: "30px" }}
-                ></div>
-              )}
-              <div>{name}</div>
-              <div>
-                <span>AI Bot Id -</span>
-                {id}
+              <div className="row mt-3 mb-3">
+                <div className="col">{name}</div>
+                <div className="col flex-end">
+                  {status ? (
+                    <div
+                      className="bg-success rounded-circle"
+                      style={{ width: "20px", height: "20px" }}
+                    ></div>
+                  ) : (
+                    <div
+                      className="bg-danger rounded-circle"
+                      style={{ width: "20px", height: "20px" }}
+                    ></div>
+                  )}
+                </div>
+              </div>
+
+              <div className="row">
+                <span className="col">AI Bot Id -</span>
+                <div className="col flex-end">{id}</div>
               </div>
               <div>
-                <EachPromt name="AI Personality" />
-                <EachPromt name="AI Language" />
+                {prompt ? (
+                  prompt.map((item, key) => (
+                    <div key={key} className="mt-2 mb-2">
+                      <EachPromt name={item} />
+                    </div>
+                  ))
+                ) : (
+                  <div
+                    className="d-flex align-items-center justify-content-center"
+                    style={{ height: "100vh" }}
+                  >
+                    <h2>No Data</h2>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -60,10 +71,10 @@ function EachPromt(props) {
         <div className="card">
           <div className="card-body">
             <div className="row">
-              <div className="col">
+              <div className="col-9">
                 <span>{props.name}</span>
               </div>
-              <div className="col">
+              <div className="col-3">
                 <AiTwotoneDelete
                   size={30}
                   color="red"

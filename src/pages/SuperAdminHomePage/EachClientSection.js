@@ -4,7 +4,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function EachClientSection() {
-  const [companyName, setCompanyName] = useState("");
   const [activeStatus, setActiveStatus] = useState();
   const [apiData, setApiData] = useState([]);
   const { id, cName } = useParams();
@@ -25,23 +24,25 @@ function EachClientSection() {
 
   return (
     <div>
-      <div>EachClientSection</div>
-      <div>{companyName}</div>
       <div>
         <span>Available AI Bots</span>
         <div>
-          {apiData
-            ? apiData.map((data) => (
-                <div style={{ marginTop: "90px", marginBottom: "20px" }}>
-                  <AdminPageCardView
-                    isAdminHomePage={false}
-                    clientName={data.name}
-                    clientId={data.chatBotId}
-                    activeStatus={data.status}
-                  />
-                </div>
-              ))
-            : ""}
+          {apiData.length != 0 ? (
+            apiData.map((data) => (
+              <div style={{ marginTop: "50px", marginBottom: "10px" }}>
+                <AdminPageCardView
+                  isAdminHomePage={false}
+                  clientName={data.name}
+                  clientId={data.chatBotId}
+                  activeStatus={data.status}
+                />
+              </div>
+            ))
+          ) : (
+            <div className="d-flex align-items-center justify-content-center" style={{height:"100vh"}}>
+              <h2>No Data</h2>
+            </div>
+          )}
         </div>
       </div>
     </div>

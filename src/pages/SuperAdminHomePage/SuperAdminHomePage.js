@@ -5,7 +5,7 @@ import axios from "axios";
 
 function SuperAdminHomePage() {
   const [companyData, setCompanyData] = useState(false);
-  const[haveData, setHaveData] = useState(true);
+  const [haveData, setHaveData] = useState(true);
   useEffect(() => {
     axios
       .get("http://172.16.1.158:1997/omnigen-ai/v1/controller/company", {})
@@ -40,10 +40,7 @@ function SuperAdminHomePage() {
       {companyData
         ? companyData.map((data) => (
             <div>
-              <div
-                className=""
-                style={{ marginTop: "90px", marginBottom: "20px" }}
-              >
+              <div className="" style={{ marginTop: "70px" }}>
                 <AdminPageCardView
                   clientName={data.name}
                   clientId={data.companyId}
@@ -55,7 +52,6 @@ function SuperAdminHomePage() {
             </div>
           ))
         : null}
-
     </div>
   );
 }

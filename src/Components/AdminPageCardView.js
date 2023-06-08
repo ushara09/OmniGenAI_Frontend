@@ -8,16 +8,16 @@ export default function AdminPageCardView(props) {
     <div className="px-5">
       <div className="card">
         <div className="card-body shadow row">
-          <div className="col">
+          <div className="col" style={{marginLeft:"100px"}}>
             {props.activeStatus ? (
               <div
                 className="bg-success rounded-circle"
-                style={{ width: "30px", height: "30px" }}
+                style={{ width: "20px", height: "20px" }}
               ></div>
             ) : (
               <div
                 className="bg-danger rounded-circle"
-                style={{ width: "30px", height: "30px" }}
+                style={{ width: "20px", height: "20px" }}
               ></div>
             )}
           </div>
