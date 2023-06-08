@@ -4,10 +4,11 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import axios from "axios";
 
 function SuperAdminHomePage() {
-  const [companyData, setCompanyData] = useState([]);
+  const [companyData, setCompanyData] = useState(false);
+  const[haveData, setHaveData] = useState(true);
   useEffect(() => {
     axios
-      .get("http://localhost:1997/omnigen-ai/v1/controller/company", {})
+      .get("http://172.16.1.158:1997/omnigen-ai/v1/controller/company", {})
       .then((res) => {
         setCompanyData(res.data);
         console.log("API Data - ", res.data);
@@ -55,16 +56,6 @@ function SuperAdminHomePage() {
           ))
         : null}
 
-      {/* <div className="" style={{ marginTop: "90px", marginBottom: "20px" }}>
-        <AdminPageCardView
-          clientName="vihan"
-          clientId="2000-abc"
-          numberOfBots="4"
-          activeStatus={false}
-          isAdminHomePage={true}
-        />
-      </div> */}
-    
     </div>
   );
 }

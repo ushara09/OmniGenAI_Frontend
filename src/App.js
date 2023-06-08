@@ -12,11 +12,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<SideNavBar/>} />
         <Route path='/customer-login' element={<CustomerLoginPage/>} />
         <Route path='/admin-login' element={<SuperAdminLogin/>} />
         <Route path='/admin/home' element={<SuperAdminHomePage/>} />
-        <Route path='/admin/each-client-section/:id' element={<EachClientSection/>} />
+        <Route path='/admin/each-client-section/:id/:cName' element={<EachClientSection/>} />
         <Route path='/admin/each-bot-section/:id/:name/:status' element={<EachBotSection/>} />
         <Route path='/admin/ai-management' element={<AIManagementSection/>} />
       </Routes>

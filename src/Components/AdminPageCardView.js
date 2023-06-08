@@ -39,7 +39,7 @@ export default function AdminPageCardView(props) {
               className="btn btn-primary w-50"
               to={
                 adminHomePage
-                  ? `/admin/each-client-section/${props.clientId}`
+                  ? `/admin/each-client-section/${props.clientId}/${props.clientName}`
                   : `/admin/each-bot-section/${props.clientId}/${props.clientName}/${props.activeStatus}`
               }
             >
