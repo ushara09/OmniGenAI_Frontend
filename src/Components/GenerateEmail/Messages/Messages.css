@@ -49,3 +49,30 @@
 	display: block;
 	padding-bottom: 6px;
 }
+
+.msg-btn {
+	border-radius: 50px;
+	padding: 5px 15px;
+	outline: none;
+	border: none;
+	font-weight: 500;
+	color: #fff;
+	margin-top: 10px;
+}
+
+.msg-btn.copy {
+	background-color: #0066cc;
+	margin-right: 5px;
+}
+
+.msg-btn.edit {
+	background-color: #7ac74f;
+}
+
+.msg-btn.copy:hover {
+	background-color: hsl(210, 100%, 20%);
+}
+
+.msg-btn.edit:hover {
+	background-color: hsl(99, 52%, 35%);
+}
