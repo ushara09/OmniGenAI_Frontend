@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-container input {
+    margin-right: 10px;
+  }
+  
+  .user-roles {
+    width: 400px;
+  }
+  
+  .user-roles h3 {
+    margin-bottom: 10px;
+  }
+  
+  .role-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .role-box {
+    margin-bottom: 10px;
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
+  .role {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .buttons button {
+    margin-left: 5px;
+  }
+  
+  /* Additional styling for buttons, you can customize further */
+  button {
+    padding: 5px 10px;
+  }

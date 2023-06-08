@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .dropdown-container {
+    margin-top: 10px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .prompt-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  .assigned-role {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  button:last-child {
+    margin-right: 0;
+  }
+  
