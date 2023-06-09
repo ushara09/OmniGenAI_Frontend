@@ -9,7 +9,7 @@ function CustomerLoginPage() {
   const [password, setPassword] = useState("");
 
   function onSubmit() {
-    if (username === "admin" && password === "admin") {
+    if (username === "jane" && password === "12345") {
       notifySuccess();
     } else {
       notifyFail();
@@ -85,6 +85,7 @@ function CustomerLoginPage() {
                     style={{ padding: '8px', borderRadius: '5px' }}
                     name="pass" 
                     id="pass" 
+                    type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 >

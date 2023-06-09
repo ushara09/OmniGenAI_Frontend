@@ -35,6 +35,13 @@ const Messages = (props) => {
 		}
 	}
 
+	const sanitizeMessage = (messageBody) => {
+		const divider = '<div class="divider"></div>'
+		const regex = /\n/g
+
+		return messageBody.replace(regex, divider)
+	}
+
 	useEffect(() => {
 		const mergedList = [...inList, ...outList]
 		const sortedList = sortMessages(mergedList)
@@ -62,7 +69,8 @@ const Messages = (props) => {
 								<textarea
 									style={{borderRadius: "10px",
 									padding: "5ox 10px",
-									outline : "none"
+									outline : "none",
+									minWidth: "500px"
 									}}
 									rows="10"
 									cols="80"
@@ -73,14 +81,13 @@ const Messages = (props) => {
 										tempCurrentMessage[index].body =
 											e.target.value
 										setMessagesList(tempCurrentMessage)
-									}}
-									style={{ minWidth: "500px" }}
+									}}									
 									multiple
 									value={messagesList[index].body}
 								/>
 							) : (
 								<RenderHTMLStr
-									htmlString={message.body}
+									htmlString={sanitizeMessage(message.body)}
 								></RenderHTMLStr>
 							)}
 

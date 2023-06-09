@@ -8,7 +8,8 @@ import "react-toastify/dist/ReactToastify.css"
 
 const GenerateEmail = (props) => {
 	// API URL http://172.16.1.158:1997/omnigen-ai/v1/user/generateResponseForZohoTicket
-	const API = "https://demo7371228.mockable.io/user/company/2c33e0ba-03a8-11ee-be56-0242ac120004/bot/3fff832d-7e38-48cf-bf30-c04d05775657/chat"
+	//const API = "https://demo7371228.mockable.io/user/company/2c33e0ba-03a8-11ee-be56-0242ac120004/bot/3fff832d-7e38-48cf-bf30-c04d05775657/chat"
+	const API = "http://172.16.1.158:1997/omnigen-ai/v1/user/generateResponseForZohoTicket"
 	const [ticketNumber, setTicketNumber] = useState("")
 	const [isLoading, setIsLoading] = useState(false)
 
@@ -54,7 +55,7 @@ const GenerateEmail = (props) => {
 						ticketResponse.map((response) => {
 							return tempInList.push({
 								timestamp: getCurrentDateTime(),
-								body: sanitizeMessage(response?.content),
+								body: response?.content,
 								type: "IN",
 								messageType: response?.type,
 							})
@@ -77,7 +78,7 @@ const GenerateEmail = (props) => {
 			})
 	}
 
-	const generateEmail = (e) => {
+	const generateEmail = async (e) => {
 		e.preventDefault()
 
 		console.log(getCurrentDateTime())
@@ -90,13 +91,20 @@ const GenerateEmail = (props) => {
 		})
 		setOutList(tempOutList)
 
-		getTicketInfo({
+		await getTicketInfo({
 			ticketId: ticketNumber,
 			message: "test123",
 		})
 
 		setTicketNumber("")
 	}
+
+	useEffect(() => {
+		const messagesWrapper = document.querySelector(".messages-wrapper")
+		if (messagesWrapper) {
+			messagesWrapper.scrollTop = messagesWrapper.scrollHeight
+		}
+	}, [inList, outList])
 
 	return (
 		<>
@@ -175,7 +183,9 @@ const GenerateEmail = (props) => {
 									>
 										<button
 											disabled={isLoading}
-											onClick={(e) => generateEmail(e)}
+											onClick={(e) =>
+												generateEmail(e)
+											}
 											className="btn-primary"
 											type="submit"
 										>
