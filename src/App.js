@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<CreateUserRole />} />
+        <Route path='/' element={<CustomerLoginPage />} />
         <Route path='/customer-login' element={<CustomerLoginPage/>} />
         <Route path='/customer-Admin' element={<CreateAiBot/>} />
         <Route path='/generate-email' element={<GenerateEmail />} />

@@ -27,6 +27,8 @@ function CustomerLoginPage() {
       progress: undefined,
       theme: "light",
     });
+
+    window.location.href = "/generate-email"
   }
 
   function notifyFail() {
@@ -56,46 +58,47 @@ function CustomerLoginPage() {
         pauseOnHover
         theme="light"
       />
-      <div>
-        <img className="logoStyle" src={loginPageLogo} alt="Logo" />
-      </div>
-      <div className="Auth-form-container">
-        <form className="Auth-form">
-          <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Log in to OmniGen AI</h3>
-            <div className="form-group mt-3">
-              <label>Username</label>
-              <input
-                type="text"
-                className="form-control mt-1"
-                placeholder="Username"
-                onChange={(e) => setUsername(e.target.value)}
-              />
+    
+    <div style={{ display: 'flex', width: '100%', height: '100vh', flexDirection:'column', alignItems: 'center', justifyContent: 'center', gap: '50px' }}>
+        <img src={loginPageLogo} alt="Logo" />
+    
+        <div style={{ boxShadow: '0px 4px 14px 10px rgba(0, 0, 0, 0.25)', gap: '15px', display: 'flex', flexDirection:'column', alignItems: 'center', width: '500px', borderRadius: '10px', padding: '25px 30px'  }}>
+            <div>
+                <h1 style={{ fontWeight: '600', fontSize: '28px' }}>Log in to OmniGen AI</h1>
             </div>
-            <div className="form-group mt-3">
-              <label>Password</label>
-              <input
-                type="password"
-                className="form-control mt-1"
-                placeholder="Enter password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
+
+            <div style={{ display: 'flex', flexDirection: 'column', width: '100%'  }}>
+                <label for="username">Username</label>
+                <input 
+                    style={{ padding: '8px', borderRadius: '5px' }}
+                    name="username" 
+                    id="username" 
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                >
+                </input>
             </div>
-            <div className="d-grid gap-2 mt-3">
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={() => onSubmit()}
-              >
-                Submit
-              </button>
+
+            <div style={{ display: 'flex', flexDirection: 'column', width: '100%'  }}>
+            <label for="pass">Password</label>
+                <input 
+                    style={{ padding: '8px', borderRadius: '5px' }}
+                    name="pass" 
+                    id="pass" 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                >
+                </input>
             </div>
-            <p className="forgot-password text-right mt-2">
-              Forgot <a href="#">password?</a>
-            </p>
-          </div>
-        </form>
-      </div>
+            <div style={{ display: 'flex', flexDirection: 'column', width: '100%'  }}>
+                <input  onClick={() => onSubmit()} style={{ margin: '10px 0 5px 0', backgroundColor: '#0066CC', width: '100%', outline: 'none', border: 'none', padding: '8px', borderRadius: '5px', color: '#fff', fontWeight: '600' }} type="submit" value={"Submit"}/>
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+    </div>
+
+     
+     
     </div>
   );
 }
